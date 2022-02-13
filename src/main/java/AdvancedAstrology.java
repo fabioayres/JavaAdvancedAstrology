@@ -2,7 +2,7 @@
 public class AdvancedAstrology {
 
     public static void printStars(int number) {
-        for (int i = 1; i<= number; i++){
+        for (int i = 1; i <= number; i++) {
             System.out.print("*");
         }
         System.out.println("");
@@ -10,23 +10,30 @@ public class AdvancedAstrology {
 
     public static void printSpaces(int number) {
         // part 1 of the exercise
-        for (int i = 1; i<= number; i++){
+        for (int i = 1; i <= number; i++) {
             System.out.print(" ");
         }
     }
 
     public static void printTriangle(int size) {
         // part 2 of the exercise
-        for (int i = 1; i <= size; i++){
+        for (int i = 1; i <= size; i++) {
             printSpaces(size - i);
             printStars(i);
-            
-            }
-        }
 
+        }
+    }
 
     public static void christmasTree(int height) {
         // part 3 of the exercise
+        for (int i = 1; i <= (height * 2); i += 2) {
+            printSpaces(height - (+i / 2) - 1);
+            printStars(i);
+        }
+        printSpaces(height - 2);
+        printStars(3);
+        printSpaces(height - 2);
+        printStars(3);
     }
 
     public static void main(String[] args) {
@@ -34,9 +41,9 @@ public class AdvancedAstrology {
 
         printTriangle(5);
         System.out.println("---");
-//        christmasTree(4);
-//        System.out.println("---");
-//        christmasTree(10);
+        christmasTree(4);
+        System.out.println("---");
+        christmasTree(10);
 
     }
 }
